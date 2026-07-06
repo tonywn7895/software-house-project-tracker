@@ -1,30 +1,20 @@
 # Software House Project Tracker
 
-A full-stack web application for managing software development projects and tasks using Kanban workflow.
+Project management API for software development teams.
 
 ## Tech Stack
 
-Frontend
-- Next.js
 - TypeScript
-- Tailwind CSS
-
-Backend
-- Node.js
 - Express.js
-- TypeScript
-
-Database
 - PostgreSQL
+- Prisma ORM
 
 ## Features
 
-- Project Management
-- Task Management
-- Kanban Board
-- REST API
-- User Authentication (Planned)
+- User Authentication (Register/Login)
+- Project CRUD API
+- Relational Database Design
 
 ## Status
 
-🚧 In Development
+Currently under development.
