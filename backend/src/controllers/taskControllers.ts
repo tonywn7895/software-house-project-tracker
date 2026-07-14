@@ -8,6 +8,7 @@ export const getTasks: RequestHandler = async ( req , res ) => {
 }
 
 export const createTask: RequestHandler = async ( req , res ) => {
+    try{
     const { title, description, status , projectId } = req.body;
     // Validation ควรอยู่ข้างบน Prisma //
     if(!title){
@@ -24,11 +25,15 @@ export const createTask: RequestHandler = async ( req , res ) => {
         data : {
             title,
             description,
-            status,
+            status: status || "todo",
             projectId: Number(projectId)
         }
     })
-    res.json(task);
+    res.status(201).json(task);
+}catch(error){
+    console.error("Error Creating Task:", error);
+    res.status(500).json({message: "Internal Server Error"});
+}
 }
 
 export const updateTask: RequestHandler = async ( req , res ) => {

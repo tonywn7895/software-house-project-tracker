@@ -1,5 +1,6 @@
 import express from "express";
 import projectRoutes from "./routes/projectRoutes";
+import taskRoutes from "./routes/taskRoutes";
 import authRoutes from "./routes/authRoutes";
 
 const app = express();
@@ -12,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/projects", projectRoutes);
-
+app.use("/tasks", taskRoutes);
 app.listen(3001, () => {
     console.log("Server running on port 3001");
 });
